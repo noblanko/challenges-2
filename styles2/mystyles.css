@@ -1,0 +1,119 @@
+*{
+	box-sizing: border-box;
+}
+
+/* General */
+
+body{
+  align-items: center;
+  justify-content: center;
+  animation: sky 20s forwards alternate-reverse infinite;
+}
+
+.content-wrap {
+  	max-width: 1200px;
+  	width: 100%;
+  	margin: 0 auto;
+  	padding: 65px 0;
+}
+
+
+/* Clock*/
+
+#clock{
+	align-items: center;
+
+	background-color: #18191a;
+
+	width: 550px;
+	padding: 100px 40px;
+	border-radius: : 5px;
+	margin: 100px auto;
+
+	transition: background .5s ease-in-out,
+				transform .2s .3s ease-in-out,
+				border-radius .4s ease-in;
+}
+
+#clock:hover{
+	background-color: #4E1A5E;
+	animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+	transform: scale(1.2);
+	border-radius: 25px;
+}
+
+
+.date{	
+  font-family: 'Lucida Console', 'Courtier New', 'Courier New', Courier, monospace;
+  text-align: center;
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 34px;
+}
+
+
+.time{
+  font-family: 'Lucida Console', 'Courtier New', 'Courier New', Courier, monospace;
+  text-align: center;
+  text-decoration: none;
+  color: antiquewhite;
+  font-size: 60px;
+}
+
+/* Cloud moving */
+.cloud{
+	animation-name: slide;
+	animation-duration:10s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-play-state: running;
+}
+
+@keyframes slide{
+	0% {transform: translateX(0);}
+	100%{transform: translateX(600px);}
+}
+
+/* Hovering on the cloud */
+.cloud:hover {
+	animation-play-state: paused;
+}
+/* Sun moving */
+
+
+.sun{
+	animation-name: weirdCircle;
+	animation-duration:20s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+@keyframes weirdCircle {
+	0% {transform: translate(50px, 300px) scale(1) rotate(0deg) ;}
+	100% {transform: translate(150px, 300px) scale(1.5) rotate(360deg) ;}
+}
+
+/* Changes of color of the background */
+
+@keyframes sky {
+    0% {
+        background-color: #957DAD;
+    }
+    25% {
+        background-color: #D291BC;
+    }
+    50% {
+        background-color: #E0BBE4;
+    }
+    75% {
+        background-color: #FeC8D8;
+    }
+    100%{
+        background-color: #FFDFD3;
+    }
+}
+
+
+
